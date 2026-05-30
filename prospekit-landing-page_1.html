@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prospekit.id — Bikin Website Sales & Rental Mobil Pakai HP & AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* ─────────────────────────────────────────
+   PROSPEKIT.ID — LANDING PAGE
+   Aesthetic: Bold Editorial × Street-Tech
+   Dark base, amber accent, neon green hits
+───────────────────────────────────────── */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --ink:#0A0B0F;
+  --ink2:#111318;
+  --ink3:#1A1D27;
+  --amber:#F5A623;
+  --neon:#39FF14;
+  --red:#FF3B5C;
+  --text:#EEEDF0;
+  --muted:#6B7080;
+  --border:rgba(238,237,240,.07);
+  --card:#13151E;
+  --r:14px;
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Cabinet Grotesk',sans-serif;
+  background:var(--ink);
+  color:var(--text);
+  overflow-x:hidden;
+  font-size:16px;
+  line-height:1.7;
+}
+
+/* ── GRAIN OVERLAY ── */
+body::after{
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9999;opacity:.6;
+}
+
+h1,h2,h3,h4{font-family:'Clash Display',sans-serif;line-height:1.1;}
+a{text-decoration:none;color:inherit;}
+
+.container{max-width:900px;margin:0 auto;padding:0 24px;}
+.container-wide{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+/* ── TOPBAR ── */
+.topbar{
+  background:var(--amber);
+  color:var(--ink);
+  text-align:center;
+  padding:9px 24px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.01em;
+}
+.topbar span{opacity:.8;}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,11,15,.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  padding:14px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{
+  font-family:'Clash Display',sans-serif;
+  font-size:18px;font-weight:700;
+  color:var(--text);
+}
+.nav-logo span{color:var(--amber);}
+.nav-cta{
+  background:var(--amber);
+  color:var(--ink);
+  font-size:13px;font-weight:700;
+  padding:8px 20px;
+  border-radius:8px;
+  transition:opacity .15s;
+}
+.nav-cta:hover{opacity:.85;}
+
+/* ── HERO ── */
+.hero{
+  padding:80px 0 60px;
+  position:relative;
+  overflow:hidden;
+}
+
+/* radial glow behind hero */
+.hero::before{
+  content:'';
+  position:absolute;
+  top:-100px;left:50%;
+  transform:translateX(-50%);
+  width:800px;height:500px;
+  background:radial-gradient(ellipse,rgba(245,166,35,.12) 0%,transparent 65%);
+  pointer-events:none;
+}
+
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(245,166,35,.1);
+  border:1px solid rgba(245,166,35,.25);
+  color:var(--amber);
+  font-size:12px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:5px 14px;border-radius:100px;
+  margin-bottom:28px;
+}
+.hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);animation:pulse-dot 2s infinite;}
+
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);}}
+
+.hero h1{
+  font-size:clamp(42px,7vw,80px);
+  font-weight:700;
+  letter-spacing:-.03em;
+  margin-bottom:8px;
+  line-height:1.0;
+}
+.hero h1 .line2{
+  color:transparent;
+  -webkit-text-stroke:2px var(--amber);
+}
+.hero h1 .line3{color:var(--text);}
+
+.hero-sub{
+  font-size:18px;
+  color:var(--muted);
+  max-width:520px;
+  margin:20px 0 40px;
+  font-weight:400;
+  line-height:1.65;
+}
+.hero-sub strong{color:var(--text);font-weight:700;}
+
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:52px;}
+
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--amber);
+  color:var(--ink);
+  font-family:'Clash Display',sans-serif;
+  font-size:15px;font-weight:600;
+  padding:14px 28px;border-radius:10px;
+  transition:transform .15s,box-shadow .15s;
+  box-shadow:0 0 0 0 rgba(245,166,35,0);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(245,166,35,.3);}
+
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--text);
+  font-family:'Clash Display',sans-serif;
+  font-size:15px;font-weight:500;
+  padding:14px 24px;border-radius:10px;
+  transition:border-color .15s;
+}
+.btn-ghost:hover{border-color:rgba(238,237,240,.3);}
+
+/* ── HP MOCKUP ── */
+.mockup-row{
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:48px;
+  align-items:center;
+}
+@media(max-width:720px){.mockup-row{grid-template-columns:1fr;}}
+
+.phone-wrap{
+  position:relative;
+  display:flex;justify-content:center;
+}
+
+.phone{
+  width:220px;
+  background:var(--ink3);
+  border-radius:32px;
+  border:1px solid rgba(255,255,255,.1);
+  padding:10px;
+  box-shadow:0 32px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.06);
+  position:relative;
+}
+
+.phone-notch{
+  width:80px;height:22px;
+  background:var(--ink);
+  border-radius:0 0 14px 14px;
+  margin:0 auto 8px;
+}
+
+.phone-screen{
+  background:var(--ink2);
+  border-radius:22px;
+  overflow:hidden;
+  min-height:360px;
+}
+
+.ps-bar{
+  background:#161922;
+  padding:10px 14px 8px;
+  display:flex;align-items:center;gap:6px;
+}
+.ps-bar-dot{width:7px;height:7px;border-radius:50%;}
+.ps-bar-url{flex:1;background:var(--ink3);border-radius:4px;padding:3px 10px;font-size:9px;color:var(--muted);font-family:monospace;text-align:center;}
+
+.ps-hero-section{
+  background:linear-gradient(135deg,#161922 0%,#0F1117 100%);
+  padding:16px 14px;
+  border-bottom:1px solid var(--border);
+}
+.ps-logo{font-family:'Clash Display',sans-serif;font-size:11px;font-weight:700;color:var(--amber);margin-bottom:12px;}
+.ps-headline{font-family:'Clash Display',sans-serif;font-size:14px;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:6px;}
+.ps-headline span{color:var(--amber);}
+.ps-desc{font-size:7.5px;color:var(--muted);margin-bottom:10px;line-height:1.5;}
+.ps-btns{display:flex;gap:6px;}
+.ps-btn-a{background:var(--amber);color:var(--ink);font-size:8px;font-weight:700;padding:5px 10px;border-radius:5px;}
+.ps-btn-b{border:1px solid var(--border);color:var(--muted);font-size:8px;padding:5px 10px;border-radius:5px;}
+
+.ps-cards{padding:10px 14px;display:grid;grid-template-columns:1fr 1fr;gap:7px;}
+.ps-card{background:var(--card);border-radius:8px;padding:8px;border:1px solid var(--border);}
+.ps-card-img{height:28px;background:var(--ink3);border-radius:4px;margin-bottom:5px;display:flex;align-items:center;justify-content:center;font-size:14px;}
+.ps-card-name{font-size:7px;font-weight:700;color:var(--text);margin-bottom:1px;}
+.ps-card-price{font-size:7px;color:var(--amber);font-weight:600;}
+
+/* floating badges on phone */
+.phone-badge{
+  position:absolute;
+  font-size:10px;font-weight:700;
+  padding:5px 12px;border-radius:100px;
+  white-space:nowrap;
+  animation:float-badge 3s ease-in-out infinite;
+}
+.pb1{background:var(--neon);color:#052E00;top:-10px;right:-20px;animation-delay:0s;}
+.pb2{background:var(--red);color:white;bottom:30px;left:-24px;animation-delay:1.5s;}
+
+@keyframes float-badge{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
+
+/* stats beside phone */
+.hero-stats{display:flex;flex-direction:column;gap:16px;}
+.stat-item{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:16px 20px;
+  display:flex;align-items:center;gap:14px;
+}
+.stat-icon{font-size:24px;flex-shrink:0;}
+.stat-num{font-family:'Clash Display',sans-serif;font-size:24px;font-weight:700;color:var(--text);}
+.stat-label{font-size:12px;color:var(--muted);}
+
+/* ── PROOF STRIP ── */
+.proof-strip{
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:28px 0;
+  text-align:center;
+}
+.proof-strip p{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:20px;}
+.proof-nums{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;}
+.pn-val{font-family:'Clash Display',sans-serif;font-size:32px;font-weight:700;color:var(--text);display:block;}
+.pn-label{font-size:12px;color:var(--muted);}
+
+/* ── SECTIONS ── */
+.section{padding:88px 0;}
+.section-alt{padding:88px 0;background:var(--ink2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+
+.eyebrow{
+  font-size:11px;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--amber);font-weight:700;margin-bottom:12px;
+}
+.section-title{
+  font-size:clamp(28px,4vw,46px);
+  font-weight:700;
+  letter-spacing:-.025em;
+  margin-bottom:16px;
+}
+.section-sub{
+  font-size:17px;color:var(--muted);
+  max-width:540px;font-weight:400;
+  line-height:1.65;
+}
+
+/* ── PAIN POINTS ── */
+.pain-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:14px;
+  margin-top:40px;
+}
+.pain-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:22px;
+  transition:border-color .2s,transform .2s;
+}
+.pain-card:hover{border-color:rgba(245,166,35,.2);transform:translateY(-2px);}
+.pain-ic{font-size:22px;margin-bottom:10px;}
+.pain-card h4{font-size:14px;font-weight:700;margin-bottom:6px;}
+.pain-card p{font-size:13px;color:var(--muted);line-height:1.6;}
+
+/* ── HOW IT WORKS ── */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin-top:48px;position:relative;}
+.steps::before{
+  content:'';
+  position:absolute;
+  top:32px;left:calc(16.6% + 32px);
+  right:calc(16.6% + 32px);
+  height:1px;
+  background:repeating-linear-gradient(90deg,var(--amber) 0,var(--amber) 8px,transparent 8px,transparent 16px);
+  opacity:.3;
+}
+@media(max-width:600px){.steps::before{display:none;}.steps{gap:16px;}}
+
+.step{text-align:center;padding:0 20px;}
+.step-num{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--ink3);
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;
+  font-family:'Clash Display',sans-serif;
+  font-size:22px;font-weight:700;
+  color:var(--amber);
+  position:relative;z-index:1;
+}
+.step h4{font-size:14px;font-weight:700;margin-bottom:6px;}
+.step p{font-size:13px;color:var(--muted);line-height:1.6;}
+
+/* ── CONTENT (TOC) ── */
+.toc-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:12px;
+  margin-top:40px;
+}
+.toc-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:22px;
+  display:flex;gap:16px;align-items:flex-start;
+  transition:border-color .2s;
+}
+.toc-card:hover{border-color:rgba(245,166,35,.25);}
+.toc-n{
+  font-family:'Clash Display',sans-serif;
+  font-size:12px;font-weight:700;
+  color:var(--amber);
+  background:rgba(245,166,35,.1);
+  min-width:32px;height:32px;
+  border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.toc-card h4{font-size:14px;font-weight:700;margin-bottom:4px;}
+.toc-card p{font-size:12px;color:var(--muted);line-height:1.55;}
+
+/* ── BONUS ── */
+.bonus-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:12px;
+  margin-top:36px;
+}
+.bonus-card{
+  background:rgba(245,166,35,.05);
+  border:1px solid rgba(245,166,35,.18);
+  border-radius:var(--r);
+  padding:22px;
+  text-align:center;
+}
+.bonus-ic{font-size:28px;margin-bottom:10px;}
+.bonus-card h4{font-size:13px;font-weight:700;color:var(--amber);margin-bottom:4px;}
+.bonus-card p{font-size:12px;color:var(--muted);line-height:1.55;}
+
+/* ── WHO IS IT FOR ── */
+.who-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  margin-top:40px;
+}
+.who-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:28px 22px;
+  text-align:center;
+  transition:transform .2s,border-color .2s;
+}
+.who-card:hover{transform:translateY(-3px);border-color:rgba(245,166,35,.2);}
+.who-em{font-size:38px;margin-bottom:14px;}
+.who-card h4{font-size:17px;font-weight:700;margin-bottom:8px;}
+.who-card p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px;}
+.who-list{list-style:none;text-align:left;}
+.who-list li{font-size:12px;color:var(--muted);padding:3px 0;display:flex;gap:7px;}
+.who-list li::before{content:'✓';color:var(--neon);flex-shrink:0;}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:16px;
+  margin-top:40px;
+}
+.testi-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:24px;
+}
+.testi-stars{color:var(--amber);font-size:14px;letter-spacing:2px;margin-bottom:12px;}
+.testi-q{font-size:26px;color:var(--amber);line-height:1;margin-bottom:6px;font-family:'Clash Display',sans-serif;}
+.testi-text{font-size:14px;line-height:1.7;color:var(--text);margin-bottom:18px;font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:10px;}
+.testi-av{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--ink3);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Clash Display',sans-serif;
+  font-size:13px;font-weight:700;color:var(--amber);
+  flex-shrink:0;
+}
+.testi-name{font-size:13px;font-weight:700;}
+.testi-role{font-size:11px;color:var(--muted);}
+
+/* ── PRICING ── */
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(248px,1fr));
+  gap:20px;
+  margin-top:48px;
+  align-items:start;
+}
+.price-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:28px;
+  position:relative;
+}
+.price-card.featured{
+  border-color:var(--amber);
+  background:linear-gradient(180deg,rgba(245,166,35,.07) 0%,var(--card) 36%);
+}
+.price-pop{
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:var(--amber);color:var(--ink);
+  font-size:11px;font-weight:700;
+  padding:4px 16px;border-radius:100px;white-space:nowrap;
+  font-family:'Clash Display',sans-serif;
+}
+.price-tier{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;}
+.price-amt{
+  font-family:'Clash Display',sans-serif;
+  font-size:44px;font-weight:700;color:var(--text);
+  margin-bottom:4px;
+}
+.price-was{font-size:13px;color:var(--muted);text-decoration:line-through;margin-bottom:14px;}
+.price-desc{font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.55;}
+.price-hr{border:none;border-top:1px solid var(--border);margin:16px 0;}
+.price-feats{list-style:none;margin-bottom:24px;}
+.price-feats li{
+  font-size:13px;padding:5px 0;
+  display:flex;gap:8px;align-items:flex-start;
+  color:var(--muted);
+}
+.price-feats li.y{color:var(--text);}
+.price-feats li::before{content:'—';color:var(--muted);flex-shrink:0;}
+.price-feats li.y::before{content:'✓';color:var(--neon);}
+
+.cta-btn{
+  display:block;width:100%;text-align:center;
+  padding:14px 24px;border-radius:10px;
+  font-family:'Clash Display',sans-serif;
+  font-size:15px;font-weight:600;
+  transition:transform .15s,opacity .15s;
+  cursor:pointer;
+}
+.cta-btn:hover{transform:translateY(-1px);opacity:.9;}
+.cta-btn-p{background:var(--amber);color:var(--ink);}
+.cta-btn-o{background:transparent;border:1px solid var(--border);color:var(--text);}
+
+/* ── GUARANTEE ── */
+.guarantee{
+  display:flex;gap:20px;align-items:center;
+  background:rgba(57,255,20,.05);
+  border:1px solid rgba(57,255,20,.18);
+  border-radius:16px;
+  padding:28px;margin-top:36px;
+}
+.guarantee-ic{font-size:42px;flex-shrink:0;}
+.guarantee h4{font-size:16px;font-weight:700;color:var(--neon);margin-bottom:6px;}
+.guarantee p{font-size:13px;color:var(--muted);line-height:1.6;}
+@media(max-width:560px){.guarantee{flex-direction:column;text-align:center;}}
+
+/* ── FAQ ── */
+.faq-list{margin-top:40px;display:flex;flex-direction:column;gap:8px;}
+.faq-item{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:12px;overflow:hidden;
+}
+.faq-q{
+  padding:18px 22px;font-size:15px;font-weight:500;
+  cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  user-select:none;transition:color .15s;
+}
+.faq-q:hover{color:var(--amber);}
+.faq-ic{font-size:20px;color:var(--muted);transition:transform .2s;}
+.faq-item.open .faq-ic{transform:rotate(45deg);color:var(--amber);}
+.faq-a{
+  font-size:14px;color:var(--muted);line-height:1.7;
+  padding:0 22px;max-height:0;overflow:hidden;
+  transition:max-height .3s ease,padding .3s;
+}
+.faq-item.open .faq-a{max-height:300px;padding:0 22px 20px;}
+
+/* ── BIG CTA ── */
+.cta-box{
+  background:var(--ink3);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:64px 40px;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-box::before{
+  content:'';position:absolute;
+  top:-80px;left:50%;transform:translateX(-50%);
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(245,166,35,.1) 0%,transparent 65%);
+  pointer-events:none;
+}
+.cta-box h2{font-size:clamp(26px,4vw,44px);margin-bottom:12px;letter-spacing:-.025em;}
+.cta-box p{color:var(--muted);font-size:17px;margin-bottom:36px;}
+.cta-box-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.cta-box-btns a{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 28px;border-radius:10px;
+  font-family:'Clash Display',sans-serif;
+  font-size:15px;font-weight:600;
+  transition:transform .15s,opacity .15s;
+}
+.cta-box-btns a:hover{transform:translateY(-2px);opacity:.9;}
+.cta-box-btns .pa{background:var(--amber);color:var(--ink);}
+.cta-box-btns .pb{background:transparent;border:1px solid var(--border);color:var(--text);}
+
+/* ── STICKY BAR ── */
+.sticky-bar{
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(10,11,15,.96);
+  backdrop-filter:blur(16px);
+  border-top:1px solid var(--border);
+  padding:14px 24px;z-index:200;
+  display:flex;align-items:center;justify-content:center;gap:24px;
+  transform:translateY(100%);
+  transition:transform .3s ease;
+}
+.sticky-bar.visible{transform:translateY(0);}
+.sb-info .sb-label{font-size:11px;color:var(--muted);}
+.sb-info .sb-price{font-family:'Clash Display',sans-serif;font-size:20px;font-weight:700;}
+.sb-btn{
+  background:var(--amber);color:var(--ink);
+  font-family:'Clash Display',sans-serif;
+  font-size:14px;font-weight:700;
+  padding:11px 28px;border-radius:8px;
+  transition:opacity .15s;white-space:nowrap;
+}
+.sb-btn:hover{opacity:.88;}
+@media(max-width:500px){.sticky-bar{flex-direction:column;gap:12px;padding:16px;}}
+
+/* ── FOOTER ── */
+footer{
+  border-top:1px solid var(--border);
+  padding:40px 0;
+  text-align:center;
+}
+.footer-logo{
+  font-family:'Clash Display',sans-serif;
+  font-size:20px;font-weight:700;
+  margin-bottom:10px;
+}
+.footer-logo span{color:var(--amber);}
+footer p{font-size:13px;color:var(--muted);}
+.footer-links{display:flex;justify-content:center;gap:24px;margin-top:12px;}
+.footer-links a{font-size:12px;color:var(--muted);transition:color .15s;}
+.footer-links a:hover{color:var(--amber);}
+
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+@media(max-width:640px){
+  .hero h1{-webkit-text-stroke-width:1.5px;}
+  .cta-box{padding:40px 20px;}
+  .mockup-row{grid-template-columns:1fr;}
+  .phone-wrap{order:-1;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  🔥 <span>Harga Peluncuran — </span>Hemat 50% sebelum habis!
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">prospe<span>kit</span>.id</div>
+  <a href="#pricing" class="nav-cta">Beli Sekarang →</a>
+</nav>
+
+<!-- ████ HERO ████ -->
+<section class="hero">
+  <div class="container">
+    <div class="mockup-row">
+
+      <!-- LEFT: TEXT -->
+      <div>
+        <div class="hero-eyebrow"><span class="dot"></span> eBook + Video — Edisi 2025</div>
+
+        <h1>
+          <span class="line3">Bikin Website</span><br>
+          <span class="line2">Sales & Rental</span><br>
+          <span class="line3">Mobil dari HP</span>
+        </h1>
+
+        <p class="hero-sub">
+          Panduan <strong>step-by-step</strong> bikin website profesional
+          pakai <strong>HP & AI</strong> — tanpa laptop, tanpa coding,
+          tanpa developer mahal. Selesai <strong>2–3 jam</strong>.
+        </p>
+
+        <div class="hero-btns">
+          <a href="#pricing" class="btn-primary">Dapatkan Sekarang →</a>
+          <a href="#isi" class="btn-ghost">Lihat Isi eBook</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: HP MOCKUP -->
+      <div class="phone-wrap">
+        <span class="phone-badge pb1">✓ Cukup HP!</span>
+        <span class="phone-badge pb2">⚡ Live 2–3 Jam</span>
+
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="ps-bar">
+              <div class="ps-bar-dot" style="background:#FF5F57;width:7px;height:7px;border-radius:50%;"></div>
+              <div class="ps-bar-dot" style="background:#FEBC2E;width:7px;height:7px;border-radius:50%;"></div>
+              <div class="ps-bar-dot" style="background:#28C840;width:7px;height:7px;border-radius:50%;"></div>
+              <div class="ps-bar-url">lovable.dev • rentalmobildepok.com</div>
+            </div>
+            <div class="ps-hero-section">
+              <div class="ps-logo">RentalMobil Depok ✦</div>
+              <div class="ps-headline">Sewa Mobil<br><span>Mudah & Terpercaya</span></div>
+              <div class="ps-desc">15+ armada terawat • Antar-jemput • Booking 24 jam</div>
+              <div class="ps-btns">
+                <div class="ps-btn-a">Booking Sekarang</div>
+                <div class="ps-btn-b">Lihat Armada</div>
+              </div>
+            </div>
+            <div class="ps-cards">
+              <div class="ps-card">
+                <div class="ps-card-img">🚗</div>
+                <div class="ps-card-name">Toyota Avanza</div>
+                <div class="ps-card-price">Rp 300rb/hari</div>
+              </div>
+              <div class="ps-card">
+                <div class="ps-card-img">🚙</div>
+                <div class="ps-card-name">Innova Reborn</div>
+                <div class="ps-card-price">Rp 450rb/hari</div>
+              </div>
+              <div class="ps-card">
+                <div class="ps-card-img">🏎️</div>
+                <div class="ps-card-name">Pajero Sport</div>
+                <div class="ps-card-price">Rp 750rb/hari</div>
+              </div>
+              <div class="ps-card">
+                <div class="ps-card-img">🚐</div>
+                <div class="ps-card-name">Hiace Premio</div>
+                <div class="ps-card-price">Rp 900rb/hari</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /mockup-row -->
+
+    <!-- STATS ROW (below on mobile) -->
+    <div class="hero-stats" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:48px;">
+      <div class="stat-item">
+        <div class="stat-icon">📱</div>
+        <div>
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Cukup dari HP</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">⚡</div>
+        <div>
+          <div class="stat-num">2–3 Jam</div>
+          <div class="stat-label">Website sudah live</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">🤖</div>
+        <div>
+          <div class="stat-num">15+ Prompt</div>
+          <div class="stat-label">AI siap pakai</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">💰</div>
+        <div>
+          <div class="stat-num">Rp 0</div>
+          <div class="stat-label">Tanpa bayar developer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<div class="proof-strip reveal">
+  <div class="container">
+    <p>Dipercaya oleh</p>
+    <div class="proof-nums">
+      <div><span class="pn-val">600+</span><span class="pn-label">Pembaca aktif</span></div>
+      <div><span class="pn-val">6 BAB</span><span class="pn-label">Panduan lengkap</span></div>
+      <div><span class="pn-val">15+ Prompt</span><span class="pn-label">AI siap copy-paste</span></div>
+      <div><span class="pn-val">3 Target</span><span class="pn-label">Sales · Rental · Freelancer</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ████ PAIN POINTS ████ -->
+<section class="section reveal">
+  <div class="container">
+    <div class="eyebrow">Masalah yang Diselesaikan</div>
+    <h2 class="section-title">Kamu Pernah Rasakan<br>Salah Satu Ini?</h2>
+    <p class="section-sub">Masalah nyata yang membuat bisnis mobil kamu tidak berkembang secepat seharusnya.</p>
+
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-ic">💸</div>
+        <h4>Developer web terlalu mahal</h4>
+        <p>Bikin website mulai Rp 3–15 juta, selesai berbulan-bulan. Revisi pun bayar lagi.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-ic">💻</div>
+        <h4>Pikir harus pakai laptop</h4>
+        <p>Banyak yang beranggapan butuh laptop mahal dan skill coding. Ini mitos yang menghambat.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-ic">⏰</div>
+        <h4>Leads cuma masuk jam buka</h4>
+        <p>Calon pelanggan WA malam hari tapi tidak dibalas — langsung pindah ke kompetitor.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-ic">📲</div>
+        <h4>Kirim foto mobil manual satu-satu</h4>
+        <p>Setiap ada yang tanya harus kirim foto via WA. Buang waktu dan tidak profesional.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-ic">🤷</div>
+        <h4>Tidak tahu tools AI yang mana</h4>
+        <p>Banyak tools AI bermunculan — tapi mana yang bisa dipakai dari HP untuk bisnis mobil?</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-ic">📉</div>
+        <h4>Kalah saing secara digital</h4>
+        <p>Kompetitor lebih kecil bisa dapat lebih banyak leads hanya karena punya website yang bagus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ HOW IT WORKS ████ -->
+<section class="section-alt reveal">
+  <div class="container">
+    <div class="eyebrow">Cara Kerja</div>
+    <h2 class="section-title">Website Live dalam<br>4 Langkah dari HP</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Buka Lovable.dev di HP</h4>
+        <p>Daftar gratis langsung dari browser Chrome HP kamu. 5 menit sudah bisa mulai.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Ketik atau Ucapkan Prompt</h4>
+        <p>Copy prompt dari eBook, paste ke Lovable — atau ucapkan via voice typing HP.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>AI Generate Website</h4>
+        <p>Lovable AI membangun seluruh website dalam 2–5 menit. Langsung terlihat hasilnya.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Publish & Bagikan</h4>
+        <p>Tap Publish — website live dengan link yang bisa langsung dibagikan di WA & IG.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ ISI EBOOK ████ -->
+<section class="section reveal" id="isi">
+  <div class="container">
+    <div class="eyebrow">Isi eBook</div>
+    <h2 class="section-title">6 BAB Panduan<br>Lengkap dari HP</h2>
+    <p class="section-sub">Dari setup HP sampai website live dan menghasilkan leads — semuanya ada di sini.</p>
+
+    <div class="toc-grid">
+      <div class="toc-card">
+        <div class="toc-n">01</div>
+        <div>
+          <h4>Kenapa HP Cukup?</h4>
+          <p>Fakta mengejutkan: HP yang kamu pegang sekarang sudah cukup. Perbandingan HP vs laptop + tools AI yang bisa diakses dari HP.</p>
+        </div>
+      </div>
+      <div class="toc-card">
+        <div class="toc-n">02</div>
+        <div>
+          <h4>Setup & 15 Prompt dari HP</h4>
+          <p>Daftar Lovable.dev dari HP, cara voice typing untuk prompt, dan 15 prompt AI siap pakai khusus bisnis otomotif.</p>
+        </div>
+      </div>
+      <div class="toc-card">
+        <div class="toc-n">03</div>
+        <div>
+          <h4>Website Sales Mobil dari HP</h4>
+          <p>Step-by-step build: homepage, katalog, detail unit, integrasi WA, dan publish — semua dari layar HP kamu.</p>
+        </div>
+      </div>
+      <div class="toc-card">
+        <div class="toc-n">04</div>
+        <div>
+          <h4>Website Rental Mobil dari HP</h4>
+          <p>Sistem booking online 2-step, update status armada harian, tabel harga responsif + template konfirmasi WA.</p>
+        </div>
+      </div>
+      <div class="toc-card">
+        <div class="toc-n">05</div>
+        <div>
+          <h4>SEO & Google dari HP</h4>
+          <p>Pasang Google Analytics, daftar Google Bisnisku, riset keyword lokal, dan optimasi kecepatan — dari HP.</p>
+        </div>
+      </div>
+      <div class="toc-card">
+        <div class="toc-n">06</div>
+        <div>
+          <h4>Freelancer: Jual Jasa dari HP</h4>
+          <p>3 paket jasa siap dijual, demo ke klien dari HP, template WA cari klien, dan timeline 7 hari klien pertama.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ BONUS ████ -->
+<section class="section-alt reveal">
+  <div class="container">
+    <div class="eyebrow">Bonus Eksklusif</div>
+    <h2 class="section-title">Bonus Senilai Rp 500rb<br>— Gratis!</h2>
+    <p class="section-sub">Semua bonus ini bisa langsung dipakai dari HP kamu hari ini.</p>
+
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <div class="bonus-ic">📋</div>
+        <h4>15 Prompt AI Siap Pakai</h4>
+        <p>Copy-paste langsung ke Lovable dari HP. Tidak perlu mikir mau tulis prompt apa.</p>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-ic">💬</div>
+        <h4>Template WA Cari Klien</h4>
+        <p>Script pembuka & jawaban objeksi siap kirim ke calon klien dealer & rental.</p>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-ic">📄</div>
+        <h4>Template Konfirmasi Booking</h4>
+        <p>2 template WA konfirmasi booking rental siap pakai — tinggal edit nama & angka.</p>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-ic">✅</div>
+        <h4>Checklist 27 Poin Launch</h4>
+        <p>Checklist lengkap sebelum website dipublikasikan ke publik. Tidak ada yang terlewat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ FOR WHO ████ -->
+<section class="section reveal">
+  <div class="container">
+    <div class="eyebrow">Untuk Siapa</div>
+    <h2 class="section-title">eBook Ini Tepat<br>untuk Kamu</h2>
+
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-em">🚗</div>
+        <h4>Sales & Dealer Mobil</h4>
+        <p>Punya unit tapi belum punya website untuk tampilkan katalog dan terima leads 24 jam.</p>
+        <ul class="who-list">
+          <li>Dealer resmi & independen</li>
+          <li>Sales freelance otomotif</li>
+          <li>Showroom mobil bekas</li>
+          <li>Agen mobil baru</li>
+        </ul>
+      </div>
+      <div class="who-card">
+        <div class="who-em">🚙</div>
+        <h4>Bisnis Rental Mobil</h4>
+        <p>Ingin terima booking online otomatis tanpa harus standby WA setiap saat.</p>
+        <ul class="who-list">
+          <li>Rental harian & bulanan</li>
+          <li>Sewa mobil dengan driver</li>
+          <li>Wedding car & event</li>
+          <li>Travel & wisata lokal</li>
+        </ul>
+      </div>
+      <div class="who-card">
+        <div class="who-em">💻</div>
+        <h4>Freelancer & Agency</h4>
+        <p>Ingin jual jasa website ke klien otomotif dengan workflow super cepat dari HP.</p>
+        <ul class="who-list">
+          <li>Web developer freelance</li>
+          <li>Digital marketing agency</li>
+          <li>Mahasiswa / fresh grad</li>
+          <li>Side hustle dari rumah</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ TESTIMONIALS ████ -->
+<section class="section-alt reveal">
+  <div class="container">
+    <div class="eyebrow">Testimoni</div>
+    <h2 class="section-title">Kata Mereka yang<br>Sudah Coba</h2>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-q">"</div>
+        <p class="testi-text">Saya coba dari HP Android biasa, Rp 1,5 jutaan. Dalam 3 jam website rental saya sudah live! Sekarang booking online masuk setiap hari tanpa saya standby WA.</p>
+        <div class="testi-author">
+          <div class="testi-av">BW</div>
+          <div>
+            <div class="testi-name">Budi Wibowo</div>
+            <div class="testi-role">Owner Rental Mobil, Yogyakarta</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-q">"</div>
+        <p class="testi-text">Awalnya ragu bisa dari HP. Ternyata beneran bisa! Pakai voice typing buat ngetik prompt, website sales mobil jadi dalam 2,5 jam. Sudah dapat 3 klien minggu pertama.</p>
+        <div class="testi-author">
+          <div class="testi-av">RP</div>
+          <div>
+            <div class="testi-name">Rizky Pratama</div>
+            <div class="testi-role">Freelancer Web, Bandung</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-q">"</div>
+        <p class="testi-text">Dulu kirim foto mobil satu-satu via WA, sekarang tinggal share link website. Leads naik 3x lipat. Yang paling saya suka: semua bisa diupdate dari HP kapan saja!</p>
+        <div class="testi-author">
+          <div class="testi-av">AS</div>
+          <div>
+            <div class="testi-name">Agus Santoso</div>
+            <div class="testi-role">Sales Mobil, Surabaya</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ PRICING ████ -->
+<section class="section reveal" id="pricing">
+  <div class="container">
+    <div class="eyebrow">Pilih Paket</div>
+    <h2 class="section-title">Investasi Sekali,<br>Hasil Selamanya</h2>
+    <p class="section-sub">Pilih paket yang paling sesuai kebutuhanmu. Semua bisa langsung dipakai dari HP.</p>
+
+    <div class="pricing-grid">
+           <!-- BUNDLE -->
+      <div class="price-card featured">
+        <div class="price-pop">⭐ Paling Populer</div>
+        <div class="price-tier">Bundle Lengkap</div>
+        <div class="price-amt">Rp 99rb</div>
+        <div class="price-was">Normal Rp 198.000</div>
+        <div class="price-desc">eBook + Video Tutorial + semua bonus. Pilihan terbaik untuk hasil maksimal dari HP.</div>
+        <hr class="price-hr">
+        <ul class="price-feats">
+          <li class="y">eBook 6 BAB (PDF)</li>
+          <li class="y">15 Prompt AI siap pakai</li>
+          <li class="y">Checklist launch 27 poin</li>
+          <li class="y">Template konfirmasi WA</li>
+          <li class="y">10 Video Tutorial (4–5 jam)</li>
+          <li class="y">Template proposal freelancer</li>
+          <li class="y">Akses grup komunitas</li>
+        </ul>
+        <a href="https://prospekit.id/checkout/?add-to-cart=2374" class="cta-btn cta-btn-p">Dapatkan Bundle Sekarang →</a>
+      </div>
+
+     
+    <!-- GUARANTEE -->
+    <div class="guarantee reveal">
+      <div class="guarantee-ic">🛡️</div>
+      <div>
+        <h4>Garansi Uang Kembali 7 Hari</h4>
+        <p>Jika dalam 7 hari kamu merasa eBook ini tidak memberikan nilai yang dijanjikan, kami kembalikan 100% uangmu tanpa pertanyaan. Zero risiko untuk kamu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ FAQ ████ -->
+<section class="section-alt reveal">
+  <div class="container">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="section-title">Pertanyaan yang<br>Sering Ditanyakan</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Apakah benar-benar bisa dari HP saja? Tidak perlu laptop? <span class="faq-ic">+</span></div>
+        <div class="faq-a">Ya, 100% dari HP. Lovable.dev dan semua tools yang digunakan berbasis web — bisa diakses dari browser Chrome di HP manapun. Bahkan ada fitur voice typing khusus di HP yang justru membuat input prompt lebih cepat dari mengetik di laptop.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">HP saya androidnya lama, apakah bisa? <span class="faq-ic">+</span></div>
+        <div class="faq-a">Selama HP kamu bisa buka Chrome dan akses internet, bisa. Lovable.dev adalah web app ringan, tidak membutuhkan spesifikasi HP tinggi. HP Android Rp 1–2 jutaan pun sudah cukup.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Saya tidak mengerti coding sama sekali, apakah bisa mengikuti? <span class="faq-ic">+</span></div>
+        <div class="faq-a">Justru eBook ini dibuat untuk kamu yang tidak paham coding! Cara kerjanya: kamu cukup ketik atau ucapkan apa yang kamu mau, AI yang mengerjakan semua kodenya. Kamu hanya perlu tahu bisnis kamu sendiri.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Tools yang digunakan berbayar atau gratis? <span class="faq-ic">+</span></div>
+        <div class="faq-a">Lovable.dev memiliki free plan yang cukup untuk belajar dan membuat website pertama kamu. ChatGPT/Gemini dan Canva juga tersedia versi gratis. Total pengeluaran untuk tools bisa Rp 0. Jika ingin domain custom seperti namabisnis.com, perlu sekitar Rp 150–200rb/tahun.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Berapa lama waktu yang dibutuhkan untuk membuat 1 website? <span class="faq-ic">+</span></div>
+        <div class="faq-a">Rata-rata 2–3 jam dari HP untuk website yang sudah bisa live dan berfungsi. Ini termasuk waktu generate, upload foto, dan kustomisasi konten. Beberapa pembaca bahkan selesai dalam 90 menit.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Bagaimana cara dapat eBook setelah beli? <span class="faq-ic">+</span></div>
+        <div class="faq-a">Setelah pembayaran dikonfirmasi, link download dikirim otomatis ke WhatsApp atau email kamu dalam 1×24 jam. Format PDF bisa dibaca langsung di HP, tablet, maupun laptop.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Apakah konten diupdate jika tools AI berubah? <span class="faq-ic">+</span></div>
+        <div class="faq-a">Ya! Pembeli paket Bundle dan Premium mendapat akses ke semua update konten seumur hidup. Jika ada perubahan besar di tools yang digunakan, kami akan update eBook dan video tutorialnya.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ BIG CTA ████ -->
+<section class="section reveal">
+  <div class="container">
+    <div class="cta-box">
+      <h2>HP Kamu Sudah Cukup.<br>Mulai Hari Ini.</h2>
+      <p>Bergabung dengan ratusan sales mobil, rental, dan freelancer yang sudah membuktikannya dari HP.</p>
+      <div class="cta-box-btns">
+        <a href="https://prospekit.id/checkout/?add-to-cart=2374" class="pa">Dapatkan Bundle — Rp 99rb →</a>
+        <a href="#isi" class="pb">Lihat Semua Isi</a>
+      </div>
+      <p style="margin-top:16px;font-size:12px;color:var(--muted);">🛡️ Garansi 7 hari &nbsp;|&nbsp; ✅ Akses seumur hidup &nbsp;|&nbsp; 📱 100% dari HP</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">prospe<span>kit</span>.id</div>
+    <p>© 2026 Prospekit.id · Semua hak dilindungi</p>
+    <div class="footer-links">
+      <a href="#">Kebijakan Privasi</a>
+      <a href="#">Syarat & Ketentuan</a>
+      <a href="https://wa.me/6287861007869">Kontak</a>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sb-info">
+    <div class="sb-label">Bundle Lengkap — eBook + Video + Bonus</div>
+    <div class="sb-price">Rp 99.000 <span style="font-size:13px;color:var(--muted);font-weight:400;text-decoration:line-through;">Rp 597.000</span></div>
+  </div>
+  <a href="https://prospekit.id/checkout/?add-to-cart=2374" class="sb-btn">Dapatkan Sekarang →</a>
+</div>
+
+<script>
+(function(){
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const item=q.parentElement;
+      const isOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+      if(!isOpen)item.classList.add('open');
+    });
+  });
+
+  // Sticky bar
+  const bar=document.getElementById('stickyBar');
+  const hero=document.querySelector('.hero');
+  window.addEventListener('scroll',()=>{
+    if(hero.getBoundingClientRect().bottom<0){bar.classList.add('visible');}
+    else{bar.classList.remove('visible');}
+  },{passive:true});
+
+  // Scroll reveal
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const t=document.querySelector(a.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+  });
+})();
+</script>
+</body>
+</html>
